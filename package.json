@@ -1,0 +1,82 @@
+{
+  "name": "ts-language-deeper",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.0",
+  "description": "",
+  "author": "Anthony createitv <xfy150150@gmail.com>",
+  "license": "MIT",
+  "funding": "",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "sideEffects": false,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint . --fix",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/decorators/index.ts",
+    "start:watch": "esno watch src/decorators/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "commit": "git add . && cz",
+    "format": "prettier --config .prettierrc.cjs \"src/**/*.ts\" \"test/**/*.ts\" --write"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/ni": "^0.18.0",
+    "@antfu/utils": "^0.5.2",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "bumpp": "^8.2.1",
+    "commitizen": "^4.2.5",
+    "eslint": "8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "esno": "^0.16.3",
+    "husky": "^8.0.2",
+    "pnpm": "^7.12.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11",
+    "vite": "^3.1.2",
+    "vitest": "^0.23.4"
+  }
+}
